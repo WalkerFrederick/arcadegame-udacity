@@ -43,7 +43,11 @@ Enemy.prototype.update = function(dt) {
     player.y >= this.y - 40 && player.y <= this.y + 40
     // Check if player collides with enemy
     if ((player.x >= this.x - 40 && player.x <= this.x + 40) && (player.y >= this.y - 40 && player.y <= this.y + 40)) {
-            player.reset(this);
+        //resets player back to level one on collision
+        level = 1;
+        player.reset(this);
+        $('#levelCount').text(level);
+
     }
     //position reset
     if (this.x > 499) {
@@ -82,7 +86,6 @@ Player.prototype.update = function (dt) {
             } ,1000);
             level = 1;
         }
-        console.log(level)
         $('#levelCount').text(level);
     }
 
@@ -97,8 +100,6 @@ Player.prototype.render = function () {
 
 
 Player.prototype.handleInput = function (rcv) {
-    console.log(this.x)
-
     switch (rcv) {
         case 'up':
             if (this.y > -50) {this.y = this.y - 85;}
