@@ -102,16 +102,16 @@ Player.prototype.render = function () {
 Player.prototype.handleInput = function (rcv) {
     switch (rcv) {
         case 'up':
-            if (this.y > -50) {this.y = this.y - 85;}
+            if (this.y > -50) {this.y = this.y - 90;}
             break;
         case 'down':
-            if (this.y < 375) {this.y = this.y + 85;}
+            if (this.y < 375) {this.y = this.y + 90;}
             break;
         case 'right':
-            if (this.x < 400) {this.x = this.x + 85;}
+            if (this.x < 400) {this.x = this.x + 100;}
             break;
         case 'left':
-            if (this.x > 0) {this.x = this.x - 85;}
+            if (this.x > 0) {this.x = this.x - 100;}
             break;
     }
 };
